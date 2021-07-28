@@ -1,7 +1,7 @@
 # mini-shop
 mini-shop project with dreamcoding by ellie
-## stack
-> HTML, CSS, JAVASCRIPT
+## stackCancel changes
+> HTML, CSS, JAVASCRIPT, PWA
 ## description
 * TYPE  - Tshirt, Pants, Skirt
 * COLOR - Blue, Yellow, Pink 
