@@ -1,14 +1,8 @@
 /** img-item json 파일읽기  */
-function loadItemJson(callback){
-    const xobj = new XMLHttpRequest();
-    xobj.overrideMimeType("application/json");
-    xobj.open('GET', "/data/data.json", true);
-    xobj.onreadystatechange = () =>{
-        if(xobj.readyState==4&xobj.status =="200") {
-            callback(JSON.parse(xobj.responseText));
-        }
-    };
-    xobj.send(null);
+function loadItems() {
+    return fetch('data/data.json')
+      .then(response => response.json())
+      .then(json => json.items);
 }
 /**item list 출력 */
 function itemList(items) {
@@ -22,9 +16,12 @@ function itemList(items) {
     item.innerHTML = itemHtml;
 }
 
-loadItemJson(json => {
-    itemList(json.items);    
-});
+// main
+loadItems()
+  .then(items => {
+    itemList(items);
+  })
+  .catch(console.log);
 
 window.addEventListener('DOMContentLoaded', () => {
     const btn = document.querySelector('.btns');
@@ -46,5 +43,4 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });           
     });
-
 });
