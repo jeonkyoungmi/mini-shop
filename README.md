@@ -1,6 +1,6 @@
 # mini-shop
 mini-shop project with dreamcoding by ellie
-## stackCancel changes
+## stack
 > HTML, CSS, JAVASCRIPT, PWA
 ## description
 * TYPE  - Tshirt, Pants, Skirt
